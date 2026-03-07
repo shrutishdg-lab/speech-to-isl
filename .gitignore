@@ -1,0 +1,24 @@
+venv/
+__pycache__/
+*.pyc
+
+# Virtual environments
+.venv/
+venv/
+venv310/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VSCode
+.vscode/
+
+# OS
+.DS_Store
+
+.venv/
+venv/
+venv310/
+__pycache__/
+.vscode/
