@@ -10,9 +10,6 @@ app = FastAPI()
 UPLOAD_DIR = "temp"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
-@app.get("/")
-def root():
-    return {"status": "Speech to ISL backend running"}
 
 @app.post("/translate/")
 async def translate(audio: UploadFile = File(...)):
