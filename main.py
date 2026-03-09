@@ -33,15 +33,3 @@ async def translate(audio: UploadFile = File(...)):
         "speech_text": text,
         "isl_gloss": isl_text
     }
-
-    from fastapi import FastAPI, UploadFile, File
-
-app = FastAPI()
-
-@app.get("/")
-def home():
-    return {"message": "Speech to ISL backend running"}
-
-@app.post("/translate/")
-async def translate(audio: UploadFile = File(...)):
-    return {"status": "endpoint working"}
