@@ -19,14 +19,12 @@ def root():
 
 @app.post("/translate/")
 async def translate(audio: UploadFile = File(...)):
-
     file_path = os.path.join(UPLOAD_DIR, f"{uuid.uuid4()}.wav")
 
     with open(file_path, "wb") as buffer:
         shutil.copyfileobj(audio.file, buffer)
 
     text = transcribe_audio(file_path)
-
     isl_text = convert_to_isl(text)
 
     return {
